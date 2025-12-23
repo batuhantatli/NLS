@@ -50,6 +50,10 @@ namespace _NLS.Scripts.Player
                     WaitForInteract();
                 }
             }
+            else
+            {
+                WaitForInteract();
+            }
         }
 
         private void ReadyForInteract()
