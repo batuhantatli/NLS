@@ -1,5 +1,7 @@
+using System;
 using _NLS.Scripts.Crosshair;
 using DG.Tweening;
+using KinematicCharacterController.Examples;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +9,9 @@ namespace _NLS.Scripts.Player
 {
     public class PlayerInteractor : MonoBehaviour
     {
-        [SerializeField] CrosshairImageController  crosshairImageController;
+        #region SerializeField-Private Variables
+        [SerializeField] private CrosshairImageController  crosshairImageController;
+        [SerializeField] private ExamplePlayer player;
         private Color _crosshairBaseColor;
         private bool _isInteractReady;
         private Vector3 _hitPoint;
@@ -17,6 +21,11 @@ namespace _NLS.Scripts.Player
         private Camera _camera;
         private Ray _ray;
         private RaycastHit _hit;
+        #endregion
+        
+        
+        #region Unity Methods
+        
         private void Awake()
         {
             _camera = Camera.main;
@@ -39,11 +48,6 @@ namespace _NLS.Scripts.Player
                     }
                     
                     ReadyForInteract();
-
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        
-                    }
                 }
                 else
                 {
@@ -55,6 +59,44 @@ namespace _NLS.Scripts.Player
                 WaitForInteract();
             }
         }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.TryGetComponent(out IInteractableArea interactableArea))
+            {
+                if (interactableArea.IsReadyForInteract())
+                {
+                    Debug.Log("d");
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("f");
+                        interactableArea.Interact(this);
+                        MovementControl(false);
+
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.Q))
+                    {
+                        interactableArea.ExitInteractArea();
+                        MovementControl(true);
+                    }
+                }
+            }
+        }
+        
+
+        #endregion
+
+        #region Public Methods
+
+        public void MovementControl(bool isActive)
+        {
+            player.Character.enabled = isActive;
+        }
+        
+        #endregion
+
+        #region Private Methods
 
         private void ReadyForInteract()
         {
@@ -69,6 +111,11 @@ namespace _NLS.Scripts.Player
             _isInteractReady = false;
             crosshairImageController.ResetInteractAnimation();
         }
+        
+
+        #endregion
+
+        #region Gizmos
 
         private void OnDrawGizmos()
         {
@@ -88,5 +135,8 @@ namespace _NLS.Scripts.Player
                 }
             }
         }
+
+        #endregion
+
     }
 }

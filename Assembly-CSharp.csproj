@@ -64,7 +64,9 @@
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\6- Crouching\Scripts\MyCharacterController.cs" />
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\9- Custom collision filtering\Scripts\MyPlayer.cs" />
     <Compile Include="Assets\_NLS\Scripts\QuestSystem\QuestCreator.cs" />
+    <Compile Include="Assets\_NLS\Scripts\QuestSystem\QuestTypeSelectController.cs" />
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\5- Adding velocities and impulses\Scripts\MyCharacterController.cs" />
+    <Compile Include="Assets\_NLS\Scripts\IInteractableArea.cs" />
     <Compile Include="Assets\_NLS\Scripts\QuestSystem\QuestManager.cs" />
     <Compile Include="Assets\_NLS\Scripts\Crosshair\CrosshairImageController.cs" />
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\16- FramePerfect Rotation\Scripts\MyPlayer.cs" />
@@ -93,8 +95,8 @@
     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\Teleporter.cs" />
     <Compile Include="Assets\_NLS\Scripts\QuestSystem\BaseQuest.cs" />
     <Compile Include="Assets\_NLS\Sprites\CaptainCatSparrow\ArmorAndJewelry\Scenes\Scripts\DragObject.cs" />
-    <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\c- Wall Jumping\MyCharacterController.cs" />
     <Compile Include="Assets\_NLS\Scripts\CustomerServices\Customer.cs" />
+    <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\c- Wall Jumping\MyCharacterController.cs" />
     <Compile Include="Assets\KinematicCharacterController\Core\KCCSettings.cs" />
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\8- Creating a moving platform\Scripts\MyPlayer.cs" />
     <Compile Include="Assets\KinematicCharacterController\Core\IMoverController.cs" />
@@ -789,6 +791,9 @@
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>C:\Users\Batuhan\Documents\GitHub\NLS\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:\Users\Batuhan\Documents\GitHub\NLS\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>C:\Users\Batuhan\Documents\GitHub\NLS\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
@@ -887,6 +892,9 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:\Users\Batuhan\Documents\GitHub\NLS\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:\Users\Batuhan\Documents\GitHub\NLS\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>C:\Users\Batuhan\Documents\GitHub\NLS\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
